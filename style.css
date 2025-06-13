@@ -84,6 +84,7 @@ h1 {
     font-family: 'Segoe Script', cursive;
     color: #ff70b4;
     margin-bottom: 1rem;
+    text-wrap: balance;
 }
 
 .muted {
@@ -143,44 +144,37 @@ h1 {
     pointer-events: none;
 }
 
-/* Optional slight shrink on tiny screens */
+/* FINAL MOBILE TWEAKS */
 @media (max-width: 600px) {
+    .card {
+        padding: 0.5em 1em;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        letter-spacing: 0;
+        word-spacing: 0;
+        line-height: 1.3;
+        text-wrap: balance;
+    }
+
+    .text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding: 0.5em;
+    }
+
+    .space {
+        height: 40px;
+    }
+
     img.cake {
-        width: 35vw;
+        width: 34vw;
     }
 
     img.side-photo {
-        width: 24vw;
+        width: 22vw;
+        max-height: 30vh;
     }
-}
-
-@media (max-width: 600px) {
-  .card {
-    padding: 0.5em;
-    margin: 0;
-  }
-
-  h1 {
-    font-size: 1.6rem;
-    letter-spacing: 0.5px;
-    line-height: 1.2;
-  }
-
-  .text {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    padding: 0.5em;
-  }
-
-  .space {
-    height: 40px;
-  }
-
-  img.side-photo {
-    max-height: 30vh;
-  }
-
-  img.cake {
-    width: 35vw;
-  }
 }
