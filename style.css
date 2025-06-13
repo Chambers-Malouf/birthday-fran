@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
 * {
-    transition : all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 body {
@@ -13,12 +14,13 @@ body {
     color: #fff;
 }
 
-.card{
+.card {
     background: #ffffff;
     border-radius: 4px;
-    height: 85vh;
+    min-height: 85vh;
+    max-width: 90vw;
     width: 80vw;
-    box-shadow: 0 5px 15px rgba(0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -26,87 +28,72 @@ body {
     align-items: center;
     padding: 1em;
     overflow: hidden;
-    z-index:0;
-    max-width: 95vw;
-
+    box-sizing: border-box;
+    z-index: 0;
 }
 
-@media only screen and (min-width: 1000px) {
-    .card{
-        flex-direction: row-reverse;
-    }
-    .card img.birthday {
-        width: 100%;
-        max-width: 50vw;
-        max-height:unset;
-    }
-}
-
-@media only screen and (max-height: 640px) {
-    .card{
-        flex-direction: row-reverse;
-    }
-    .card img.birthday {
-        width: 100%;
-        max-width: 50vw;
-        max-height:unset;
-    }
-}
 .cake-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 img.cake {
-  animation: bounceCake 2s ease-in-out infinite;
-  z-index: 1;
-  max-height: 40vh;
-  height: auto;
-  width: auto;
+    animation: bounceCake 2s ease-in-out infinite;
+    max-height: 40vh;
+    width: 30vw;
+    height: auto;
+    z-index: 1;
 }
+
 img.side-photo {
-  height: 250px;
-  width: auto;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  object-fit: cover;
-  transition: transform 0.3s ease;
+    width: 20vw;
+    height: auto;
+    max-height: 35vh;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 img.side-photo:first-child {
-  animation: photoBounceLeft 2.2s ease-in-out infinite;
+    animation: photoBounceLeft 2.2s ease-in-out infinite;
 }
 
 img.side-photo:last-child {
-  animation: photoBounceRight 2.2s ease-in-out infinite;
+    animation: photoBounceRight 2.2s ease-in-out infinite;
 }
 
-.text{
-    padding:1em;
-    color:#333;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-size:1.1rem;
+.text {
+    padding: 1em;
+    color: #333;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
     line-height: 1.8;
     text-align: center;
 }
+
 h1 {
-    font-size:2.3rem;
-    font-weight:800;
+    font-size: 2.3rem;
+    font-weight: 800;
     font-family: 'Segoe Script', cursive;
     color: #ff70b4;
-    margin-bottom:1rem;
-}
-.muted{
-    font-style:italic;
-    color:#777;
-    margin-top:2rem;
-    font-size:0.95rem;
+    margin-bottom: 1rem;
 }
 
-.space{
+.muted {
+    font-style: italic;
+    color: #777;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+}
+
+.space {
     height: 100px;
 }
 
@@ -114,43 +101,55 @@ h1 {
     from {
         opacity: 0;
     }
-    to{
+    to {
         opacity: 1;
     }
 }
 
 @keyframes bounceCake {
-  0%, 100% {
-    transform: scale(1) translateY(0);
-  }
-  50% {
-    transform: scale(1.05) translateY(-5px);
-  }
+    0%, 100% {
+        transform: scale(1) translateY(0);
+    }
+    50% {
+        transform: scale(1.05) translateY(-5px);
+    }
 }
+
 @keyframes photoBounceLeft {
-  0%, 100% {
-    transform: rotate(-10deg) translateY(0);
-  }
-  50% {
-    transform: rotate(-10deg) translateY(-5px);
-  }
+    0%, 100% {
+        transform: rotate(-10deg) translateY(0);
+    }
+    50% {
+        transform: rotate(-10deg) translateY(-5px);
+    }
 }
 
 @keyframes photoBounceRight {
-  0%, 100% {
-    transform: rotate(10deg) translateY(0);
-  }
-  50% {
-    transform: rotate(10deg) translateY(-5px);
-  }
+    0%, 100% {
+        transform: rotate(10deg) translateY(0);
+    }
+    50% {
+        transform: rotate(10deg) translateY(-5px);
+    }
 }
 
 #confetti-canvas {
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index:0;
-    pointer-events:none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Optional slight shrink on tiny screens */
+@media (max-width: 600px) {
+    img.cake {
+        width: 35vw;
+    }
+
+    img.side-photo {
+        width: 24vw;
+    }
 }
