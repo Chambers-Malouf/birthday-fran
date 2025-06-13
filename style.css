@@ -1,180 +1,165 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 * {
-    transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
 }
 
 body {
-    background: #3e04c452;
-    display: grid;
-    place-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: "Open Sans", sans-serif;
-    color: #fff;
+  background: #3e04c452;
+  display: flex;
+  justify-content: center;
+  padding: 2vh 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  min-height: 100vh;
 }
 
 .card {
-    background: #ffffff;
-    border-radius: 4px;
-    min-height: 85vh;
-    max-width: 90vw;
-    width: 80vw;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 0;
+  background: #ffffff;
+  border-radius: 4px;
+  width: 80vw;
+  max-width: 800px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5em 1em;
+  overflow: hidden;
+  z-index: 0;
 }
 
 .cake-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    flex-wrap: nowrap;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 img.cake {
-    animation: bounceCake 2s ease-in-out infinite;
-    max-height: 40vh;
-    width: 30vw;
-    height: auto;
-    z-index: 1;
+  animation: bounceCake 2s ease-in-out infinite;
+  max-height: 40vh;
+  width: 30vw;
+  height: auto;
+  z-index: 1;
 }
 
 img.side-photo {
-    width: 20vw;
-    height: auto;
-    max-height: 35vh;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    object-fit: cover;
-    transition: transform 0.3s ease;
+  width: 20vw;
+  max-width: 150px;
+  height: auto;
+  max-height: 35vh;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 img.side-photo:first-child {
-    animation: photoBounceLeft 2.2s ease-in-out infinite;
+  animation: photoBounceLeft 2.2s ease-in-out infinite;
 }
 
 img.side-photo:last-child {
-    animation: photoBounceRight 2.2s ease-in-out infinite;
+  animation: photoBounceRight 2.2s ease-in-out infinite;
 }
 
 .text {
-    padding: 1em;
-    color: #333;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    text-align: center;
+  padding: 1em 0.5em;
+  color: #333;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: center;
 }
 
 h1 {
-    font-size: 2.3rem;
-    font-weight: 800;
-    font-family: 'Segoe Script', cursive;
-    color: #ff70b4;
-    margin-bottom: 1rem;
-    text-wrap: balance;
+  font-size: 2.3rem;
+  font-weight: 800;
+  font-family: 'Segoe Script', cursive;
+  color: #ff3ca2;
+  margin: 1rem 0;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
 }
 
 .muted {
-    font-style: italic;
-    color: #777;
-    margin-top: 2rem;
-    font-size: 0.95rem;
+  font-style: italic;
+  color: #777;
+  margin-top: 2rem;
+  font-size: 0.95rem;
 }
 
 .space {
-    height: 100px;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  height: 60px;
 }
 
 @keyframes bounceCake {
-    0%, 100% {
-        transform: scale(1) translateY(0);
-    }
-    50% {
-        transform: scale(1.05) translateY(-5px);
-    }
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.05) translateY(-5px);
+  }
 }
 
 @keyframes photoBounceLeft {
-    0%, 100% {
-        transform: rotate(-10deg) translateY(0);
-    }
-    50% {
-        transform: rotate(-10deg) translateY(-5px);
-    }
+  0%, 100% {
+    transform: rotate(-10deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-10deg) translateY(-5px);
+  }
 }
 
 @keyframes photoBounceRight {
-    0%, 100% {
-        transform: rotate(10deg) translateY(0);
-    }
-    50% {
-        transform: rotate(10deg) translateY(-5px);
-    }
+  0%, 100% {
+    transform: rotate(10deg) translateY(0);
+  }
+  50% {
+    transform: rotate(10deg) translateY(-5px);
+  }
 }
 
 #confetti-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* FINAL MOBILE TWEAKS */
+/* Mobile Tweaks */
 @media (max-width: 600px) {
-    .card {
-        padding: 0.5em 1em;
-        margin: 0;
-    }
+  img.cake {
+    width: 35vw;
+  }
 
-    h1 {
-        font-size: 1.6rem;
-        letter-spacing: 0;
-        word-spacing: 0;
-        line-height: 1.3;
-        text-wrap: balance;
-    }
+  img.side-photo {
+    width: 24vw;
+    max-height: 30vh;
+  }
 
-    .text {
-        font-size: 0.95rem;
-        line-height: 1.6;
-        padding: 0.5em;
-    }
+  h1 {
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9);
+  }
 
-    .space {
-        height: 40px;
-    }
+  .text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
 
-    img.cake {
-        width: 34vw;
-    }
-
-    img.side-photo {
-        width: 22vw;
-        max-height: 30vh;
-    }
+  .space {
+    height: 40px;
+  }
 }
