@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>Happy Birthday!</title>
+        <link rel = "stylesheet" href = "style.css">
+    </head>
+    <body>
+        <div class = "card">
+            <div class = "cake-row">
+            <img src="me-and-fran.JPG" alt="Us" class="side-photo">
+            <img src="cake.png" alt="cake" class="cake">
+            <img src="walk-of-shame.JPG" alt="Another" class="side-photo">
+            </div>
+            <div class = "text">
+                <h1>HAPPY BIRTHDAY FRAN!!!</h1>
+                <p>
+                I hope that today is just the greatest day possible (other than the fact that I'm not there)
+                <br><br>
+                I am so thankful to have met you and been able to spend 3 amazing years with you with many more to come!
+                <br><br>
+                You have always been someone I admire. I love the energy you bring and the way that you always make others smile!
+                <br><br>
+                so I hope this little suprise made you smile :)
+                </p>
+                <p class = "muted">-Chambers</p>
+            </div>
+            <div class = "space"></div>
+            <script src="script.js"></script>
+        </div>
+        <canvas id="confetti-canvas"></canvas>
+            <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
+            <script>
+            const confettiSettings = { target: 'confetti-canvas', max: 200, size: 1.2, animate: true, props: ['circle', 'square', 'triangle'], colors: [[255, 183, 197], [255, 255, 255], [135, 206, 235]] };
+            const confetti = new ConfettiGenerator(confettiSettings);
+            confetti.render();
+            </script>
+    </body>
+</html>
